@@ -95,10 +95,21 @@ static public class AssignmentPart1
                     sw.WriteLine(pcSave.strength);
                     sw.WriteLine(pcSave.agility);
                     sw.WriteLine(pcSave.wisdom);
+                    //sw.WriteLine(pcSave.equipment);
                     //sw.WriteLine(pcSave.equipment.CopyTo(pc.equipment<>,0));
                     //sw.WriteLine("\n");
+                    sw.WriteLine(pcSave.equipment.Count);
                 }
             }
+
+            //using (StreamWriter sw = new StreamWriter("TestFileEquipment.txt"))
+            //{
+            //    foreach (PartyCharacter pcSave in GameContent.partyCharacters)
+            //    {
+            //        //sw.WriteLine(pcSave.equipment.CopyTo(pc.equipment<>,0));
+            //        //sw.WriteLine("\n");
+            //    }
+            //}
 
             // Read and show each line from the file.
             //string line = "";
@@ -133,13 +144,14 @@ static public class AssignmentPart1
             // the file is reached.
             while ((IDCode = sr.ReadLine()) != null && (HP = sr.ReadLine()) != null
                 && (PP = sr.ReadLine()) != null && (STR = sr.ReadLine()) != null
-                && (AG = sr.ReadLine()) != null && (WIS = sr.ReadLine()) != null 
+                && (AG = sr.ReadLine()) != null && (WIS = sr.ReadLine()) != null
                 && (EQM = sr.ReadLine()) != null)
             {
                 Debug.Log("PC class id from last save == " + IDCode);
                 PartyCharacter pc = new PartyCharacter(int.Parse(IDCode), int.Parse(HP), int.Parse(PP), 
                 int.Parse(STR), int.Parse(AG), int.Parse(WIS));
-                pc.equipment.AddLast(GameContent.EquipmentID.Staff);
+                pc.equipment.AddLast(int.Parse(EQM));
+                Debug.Log("PC class equipment == " + EQM);
                 GameContent.partyCharacters.AddLast(pc);
                 
                 //foreach (PartyCharacter pcSave in GameContent.partyCharacters)

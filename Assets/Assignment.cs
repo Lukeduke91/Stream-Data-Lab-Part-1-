@@ -103,14 +103,26 @@ static public class AssignmentPart1
                 }
             }
 
-            //using (StreamWriter sw = new StreamWriter("TestFileEquipment.txt"))
-            //{
-            //    foreach (PartyCharacter pcSave in GameContent.partyCharacters)
-            //    {
-            //        //sw.WriteLine(pcSave.equipment.CopyTo(pc.equipment<>,0));
-            //        //sw.WriteLine("\n");
-            //    }
-            //}
+            using (StreamWriter sw = new StreamWriter("TestFileEquipment.txt"))
+            {
+                foreach (PartyCharacter pcSave in GameContent.partyCharacters)
+                {
+                    foreach (int EQMI in pcSave.equipment)
+                    {
+                        sw.WriteLine(EQMI);
+                        
+                        //pc.equipment.AddLast(pcSave.equipment.First.Value);
+                        //sw.WriteLine(pcSave.equipment.Count);
+                    }
+                    //sw.WriteLine(pcSave.equipment.First.Value);
+                    //pc.equipment.AddLast(pcSave.equipment.First.Value);
+                    //sw.WriteLine(pcSave.equipment.First.Value);
+                    //pc.equipment.AddLast(pcSave.equipment.First.Value);
+                    //sw.WriteLine(pcSave.equipment.First.Value);
+                    //pc.equipment.AddLast(pcSave.equipment.First.Value);
+                    //sw.WriteLine("\n");
+                }
+            }
 
             // Read and show each line from the file.
             //string line = "";

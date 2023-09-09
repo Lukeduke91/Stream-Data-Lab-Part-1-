@@ -97,6 +97,7 @@ static public class AssignmentPart1
                     sw.WriteLine(pcSave.wisdom);
                     //sw.WriteLine(pcSave.equipment);
                     sw.WriteLine(pcSave.equipment.First.Value);
+                    sw.WriteLine(pcSave.equipment.Last.Value);
                     //sw.WriteLine("\n");
                     //sw.WriteLine(pcSave.equipment.First);
                 }
@@ -140,17 +141,19 @@ static public class AssignmentPart1
             string AG;
             string WIS;
             string EQM;
+            string EQM1;
             // Read and display lines from the file until the end of
             // the file is reached.
             while ((IDCode = sr.ReadLine()) != null && (HP = sr.ReadLine()) != null
                 && (PP = sr.ReadLine()) != null && (STR = sr.ReadLine()) != null
                 && (AG = sr.ReadLine()) != null && (WIS = sr.ReadLine()) != null
-                && (EQM = sr.ReadLine()) != null)
+                && (EQM = sr.ReadLine()) != null && (EQM1 = sr.ReadLine()) != null)
             {
                 Debug.Log("PC class id from last save == " + IDCode);
                 PartyCharacter pc = new PartyCharacter(int.Parse(IDCode), int.Parse(HP), int.Parse(PP), 
                 int.Parse(STR), int.Parse(AG), int.Parse(WIS));
                 pc.equipment.AddLast(int.Parse(EQM));
+                pc.equipment.AddLast(int.Parse(EQM1));
                 Debug.Log("PC class equipment == " + EQM);
                 GameContent.partyCharacters.AddLast(pc);
                 

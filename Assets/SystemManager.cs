@@ -164,6 +164,7 @@ public class SystemManager : MonoBehaviour
 
                     foreach (int equipID in pc.equipment)
                     {
+                        //Look more into this line of Code
                         info = info + "\n" + GameContent.EquipmentID.lookUp[equipID];
                     }
 

@@ -96,9 +96,9 @@ static public class AssignmentPart1
                     sw.WriteLine(pcSave.agility);
                     sw.WriteLine(pcSave.wisdom);
                     //sw.WriteLine(pcSave.equipment);
-                    //sw.WriteLine(pcSave.equipment.CopyTo(pc.equipment<>,0));
+                    sw.WriteLine(pcSave.equipment.First.Value);
                     //sw.WriteLine("\n");
-                    sw.WriteLine(pcSave.equipment.Count);
+                    //sw.WriteLine(pcSave.equipment.First);
                 }
             }
 

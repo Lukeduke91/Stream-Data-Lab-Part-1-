@@ -174,16 +174,18 @@ static public class AssignmentPart1
                 int.Parse(STR), int.Parse(AG), int.Parse(WIS));
                 pc.equipment.AddLast(int.Parse(EQM));
                 pc.equipment.AddLast(int.Parse(EQM1));
-                
+                GameContent.partyCharacters.Skip(1);
                 if (EQM2 != "")
                 {
+                    Debug.Log("Works!");
                     pc.equipment.AddLast(int.Parse(EQM2));
                 }
                 else
                 {
+                    Debug.Log("Doesn't Works!");
                 }
                 //Debug.Log("PC class equipment == " + EQM);
-                    GameContent.partyCharacters.AddLast(pc);
+                GameContent.partyCharacters.AddLast(pc);
 
                 
                 //break;
